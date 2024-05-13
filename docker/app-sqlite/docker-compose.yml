@@ -4,7 +4,7 @@ networks:
     driver: bridge
 services:
   app:
-    image: nocobase/nocobase:latest
+    image: nocobase/nocobase:1.0.0-alpha.6
     networks:
       - nocobase
     environment:
