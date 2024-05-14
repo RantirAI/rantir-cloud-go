@@ -51,7 +51,7 @@ export function AuthLayout() {
         paddingTop: '20vh',
       }}
     >
-      <h1>RANTIR TEST</h1>
+      <h1>RANTIR NOCODE</h1>
       <AuthenticatorsContextProvider>
         <Outlet />
       </AuthenticatorsContextProvider>
