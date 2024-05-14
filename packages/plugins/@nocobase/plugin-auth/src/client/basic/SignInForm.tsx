@@ -93,7 +93,7 @@ const passwordForm: ISchema = {
       'x-component-props': {
         to: '{{ signUpLink }}',
       },
-      'x-content': '{{t("Create an account")}}',
+      'x-content': 'Test Custom Rantir',
       'x-visible': '{{ allowSignUp }}',
     },
   },
