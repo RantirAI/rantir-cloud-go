@@ -27,5 +27,7 @@ jobs:
         ssh -o StrictHostKeyChecking=no root@45.77.146.40 << 'EOF'
           cd rantir-cloud-go
           git pull origin original
-          yarn nocobase pm2-restart
+          yarn build
+          yarn nocobase pm2-stop
+          yarn start -d
         EOF
