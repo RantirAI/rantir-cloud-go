@@ -18,6 +18,10 @@ jobs:
       with:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
+    - name: Add GitHub to known_hosts
+      run: |
+        ssh-keyscan github.com >> ~/.ssh/known_hosts
+
     - name: Execute remote commands
       run: |
         ssh -o StrictHostKeyChecking=no root@45.77.146.40 << 'EOF'
