@@ -15,7 +15,10 @@ import { CollectionFieldInterface } from '../../data-source/collection-field-int
 
 registerValidateRules({
   username(value) {
-    return /^[^@.<>"'/]{2,16}$/.test(value) || i18n.t('Must be 2-16 characters in length (excluding @.<>"\'/)');
+    return (
+      /^[^<>"'/]{2,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value) ||
+      i18n.t('Must be 2-16 characters in length (excluding @.<>"\'/)')
+    );
   },
 });
 
