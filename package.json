@@ -89,5 +89,6 @@
     "node": "18.14.2",
     "yarn": "1.22.19"
   },
-  "dependencies": {}
+  "packageManager": "yarn@1.22.1",
+  "version": "0.0.0"
 }

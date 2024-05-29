@@ -9,11 +9,12 @@
 
 import { css } from '@emotion/css';
 import { Space, Tabs } from 'antd';
-import React, { createElement, useContext } from 'react';
+import React, { createElement, useContext, useEffect } from 'react';
 import { useCurrentDocumentTitle, usePlugin, useViewport } from '@nocobase/client';
 import AuthPlugin, { AuthOptions } from '..';
 import { Authenticator, AuthenticatorsContext } from '../authenticator';
 import { useAuthTranslation } from '../locale';
+import { useSearchParams } from "react-router-dom";
 
 export const useSignInForms = (): {
   [authType: string]: AuthOptions['components']['SignInForm'];
@@ -49,6 +50,8 @@ export const SignInPage = () => {
   const { t } = useAuthTranslation();
   useCurrentDocumentTitle('Signin');
   useViewport();
+  const [searchParams] = useSearchParams();
+  const token = searchParams.get("token");
   const signInForms = useSignInForms();
   const authenticators = useContext(AuthenticatorsContext);
   const signInButtons = useSignInButtons(authenticators);
@@ -74,28 +77,45 @@ export const SignInPage = () => {
     })
     .filter((i) => i);
 
+  useEffect(() => {
+    if(token) {
+      localStorage.setItem('token',token);
+      localStorage.setItem('NOCOBASE_AUTH',token);
+
+      window.location.href = "/admin"
+    }
+    else {
+      
+    }
+  },[token])
+
   return (
+    <>
+    {searchParams.get("token")  ? <h1>Please Wait...</h1> : 
+    <Space
+    direction="vertical"
+    className={css`
+      display: flex;
+    `}
+  >
+    {tabs.length > 1 ? (
+      <Tabs items={tabs.map((tab) => ({ label: tab.tabTitle, key: tab.name, children: tab.component }))} />
+    ) : tabs.length ? (
+      <div>{tabs[0].component}</div>
+    ) : (
+      <></>
+    )}
     <Space
       direction="vertical"
       className={css`
         display: flex;
       `}
     >
-      {tabs.length > 1 ? (
-        <Tabs items={tabs.map((tab) => ({ label: tab.tabTitle, key: tab.name, children: tab.component }))} />
-      ) : tabs.length ? (
-        <div>{tabs[0].component}</div>
-      ) : (
-        <></>
-      )}
-      <Space
-        direction="vertical"
-        className={css`
-          display: flex;
-        `}
-      >
-        {signInButtons}
-      </Space>
+      {signInButtons}
     </Space>
+  </Space>
+  }
+    
+    </>
   );
 };
