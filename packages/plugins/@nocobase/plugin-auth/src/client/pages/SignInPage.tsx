@@ -84,9 +84,6 @@ export const SignInPage = () => {
 
       window.location.href = "/admin"
     }
-    else {
-      
-    }
   },[token])
 
   return (
