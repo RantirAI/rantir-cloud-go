@@ -1,0 +1,11 @@
+{
+  "name": "@rantir/aiexplore-plugin",
+  "version": "1.0.0-alpha.13",
+  "main": "dist/server/index.js",
+  "dependencies": {},
+  "peerDependencies": {
+    "@nocobase/client": "1.x",
+    "@nocobase/server": "1.x",
+    "@nocobase/test": "1.x"
+  }
+}

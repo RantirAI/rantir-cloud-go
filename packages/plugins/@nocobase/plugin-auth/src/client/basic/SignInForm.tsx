@@ -81,21 +81,22 @@ const passwordForm: ISchema = {
             htmlType: 'submit',
             block: true,
             type: 'primary',
+            class: 'font-family-golos',
             useAction: `{{ useBasicSignIn }}`,
-            style: { width: '100%' },
+            style: { width: '30%', borderRadius: '0', backgroundColor: 'black' },
           },
         },
       },
     },
-    signUp: {
-      type: 'void',
-      'x-component': 'Link',
-      'x-component-props': {
-        to: '{{ signUpLink }}',
-      },
-      'x-content': 'Create an Account',
-      'x-visible': '{{ allowSignUp }}',
-    },
+    // signUp: {
+    //   type: 'void',
+    //   'x-component': 'Link',
+    //   'x-component-props': {
+    //     to: '{{ signUpLink }}',
+    //   },
+    //   'x-content': 'Create an Account',
+    //   'x-visible': '{{ allowSignUp }}',
+    // },
   },
 };
 export const SignInForm = (props: { authenticator: Authenticator }) => {

@@ -36,8 +36,7 @@ const SettingsMenu: React.FC<{
       disabled: true,
       label: (
         <div style={{ cursor: 'text' }}>
-          <div style={{ color: token.colorText }}>NocoBase</div>
-          <div style={{ fontSize: '0.8em', color: token.colorTextDescription }}>v{data?.data?.version}</div>
+          <div style={{ color: token.colorText }}>Rantir</div>
         </div>
       ),
     },
@@ -48,7 +47,7 @@ const SettingsMenu: React.FC<{
     {
       key: 'homePage',
       label: (
-        <a href={isSimplifiedChinese ? 'https://cn.nocobase.com/' : 'https://www.nocobase.com'} target="__blank">
+        <a href={isSimplifiedChinese ? 'https://www.rantir.com/' : 'https://www.rantir.com/'} target="__blank">
           {t('Home page')}
         </a>
       ),
@@ -57,7 +56,7 @@ const SettingsMenu: React.FC<{
       key: 'userManual',
       label: (
         <a
-          href={isSimplifiedChinese ? 'https://docs-cn.nocobase.com/handbook' : 'https://docs.nocobase.com/handbook'}
+          href={isSimplifiedChinese ? 'https://www.rantir.com/support' : 'https://www.rantir.com/support'}
           target="__blank"
         >
           {t('Handbook')}
@@ -67,7 +66,7 @@ const SettingsMenu: React.FC<{
     {
       key: 'license',
       label: (
-        <a href="https://github.com/nocobase/nocobase/blob/main/LICENSE-AGPL" target="__blank">
+        <a href="https://www.rantir.com/license" target="__blank">
           {t('License')}
         </a>
       ),

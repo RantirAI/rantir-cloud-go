@@ -1,110 +1,12 @@
-.ant-popover-inner {
-    background-color: white !important;
-    border-radius: 4px;
-  }
-  
-  .ant-popover-inner .ant-popover-inner-content {
-    padding: 0 !important;
-  }
-  
-  .ant-nb-schema-initializer-menu-item {
-    background-color: white !important;
-    color: black !important;
-    padding: 4px 6px;
-    border-radius: 4px;
-    font-size: 11px !important;
-    margin: 4px 0;
-  }
-  
-  .ant-nb-schema-initializer-menu-item:hover {
-    background-color: #333 !important;
-  }
-  
-  /* Menu Background */
-.ant-menu {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  }
-  
-  /* Menu Headers */
-  .ant-menu-item-group-title {
-    font-weight: bold;
-    font-size: 14px;
-    color: #000000;
-  }
-  
-  /* Menu Items */
-  .ant-menu-item {
-    font-size: 14px;
-    color: #000000;
-    padding: 8px 16px;
-  }
-  
-  .ant-menu-item .anticon {
-    color: white;
-  }
-  
-  .ant-menu-item:hover {
-    background-color: #F5F5F5;
-    color: #000000;
-  }
-  
-  /* Install New Blocks Button */
-  .ant-btn {
-    background-color: #FFFFFF;
-    padding: 0px 16px;
-    font-size: 14px;
-    color: #000000;
-    border-radius: 0px;
-  }
-  
-  .ant-btn:hover {
-    background-color: #211E1E !important;
-    color: #FFF !important;
-    border:0px !important;
-  }
-  
-  .css-17black {
-    position: relative;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    background-color: rgb(47, 47, 47);
-    padding: 0 20px;
-
-    height: 30px;
-    border-radius: 7px;
-    color: white;
-    font-size: 12px;
+.css-1o1fqc9 {
+  bottom: -30px !important;
 }
 
-.ant-layout-header {
-  background-color: yellow !important;
-}
-.ant-menu-submenu .ant-menu-submenu-vertical {
-    color:black;
+@font-face {
+  font-family: GolosText;
+  src: url('./GolosText-VariableFont_wght.ttf');
 }
 
-.ant-menu-submenu-title {
-  color: black;
-}
-
-span.ant-page-header-heading-title {
-  color: black !important;
-}
-
-.anticon {
-    color:black;
-}
-
-.ant-menu-title-content {
-  color: black;
+.font-family-golos {
+  font-family: GolosText;
 }

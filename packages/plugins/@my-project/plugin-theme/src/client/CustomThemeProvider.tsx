@@ -11,6 +11,7 @@ import React from 'react';
 import { ConfigProvider } from 'antd';
 import { SchemaComponentOptions } from '@nocobase/client';
 import './customstyles.css';
+import './modifyicon.js';
 
 const customStyles = {
   backgroundColor: '#FFFF00', // Dark blue background
@@ -34,45 +35,6 @@ const CustomThemeProvider: React.FC = ({ children }) => {
         },
       }}
     >
-      <style>{`
-        body {
-          background-color: ${customStyles.backgroundColor} !important;
-          color: ${customStyles.textColor} !important;
-        }
-        .ant-page-header {
-          color: black !important;
-        }
-        .ant-page-header * {
-          color: ${customStyles.textColor} !important;
-        }
-
-        .ant-page-header span {
-          color: ${customStyles.textColor} !important;
-        }
-
-        .css-junazh {
-          display: ${customStyles.hiddenElementDisplay} !important;
-        }
-        .ant-card {
-          background-color: rgb(231, 231, 231) !important;
-          border-color: ${customStyles.borderColor} !important;
-        }
-        .ant-typography {
-          color: ${customStyles.textColor} !important;
-        }
-        a {
-          color: ${customStyles.linkColor} !important;
-        }
-        .ant-layout-header {
-          background-color: #000 !important;
-        }
-                  button[data-testid="schema-initializer-Menu-header"] {
-          border-color: #FFAB2E !important;
-          color: #FFAB2E !important;
-          border-radius: 0rem !important;
-          border-style: solid !important;
-        }
-      `}</style>
       <SchemaComponentOptions components={{}}>{children}</SchemaComponentOptions>
     </ConfigProvider>
   );
