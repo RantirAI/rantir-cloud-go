@@ -96,7 +96,7 @@ function addButtonWhenParentExists() {
 
       // Add click event listener to the button
       newButton.addEventListener('click', () => {
-        window.location.href = 'http://localhost:13000/explore';
+        window.location.href = 'http://140.82.15.211:13000/explore';
       });
 
       // Clear the interval to stop checking
