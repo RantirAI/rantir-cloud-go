@@ -8,6 +8,7 @@
  */
 
 function addButtonWhenParentExists() {
+  console.log('ada');
   const intervalId = setInterval(() => {
     // Select the parent div with the specific class
     const parentDiv = document.querySelector('.css-14exgtg');
@@ -47,6 +48,11 @@ function addButtonWhenParentExists() {
         'class',
         'ant-btn css-dev-only-do-not-override-10e56at ant-btn-default ant-btn-icon-only ant-tooltip-open',
       );
+
+      // Add onclick event to redirect
+      databaseButton.addEventListener('click', () => {
+        window.location.href = '/admin/settings/data-source-manager/list'; // Replace with the desired URL
+      });
 
       // Set inner HTML for the button
       newButton.innerHTML = `
@@ -90,9 +96,9 @@ function addButtonWhenParentExists() {
         `;
 
       // Append the button to the parent div
-      parentDiv.appendChild(partitionButton);
-      parentDiv.appendChild(databaseButton);
-      parentDiv.appendChild(newButton);
+      parentDiv.insertBefore(partitionButton, parentDiv.children[2]);
+      parentDiv.insertBefore(databaseButton, parentDiv.children[2]);
+      parentDiv.insertBefore(newButton, parentDiv.children[2]);
 
       // Add click event listener to the button
       newButton.addEventListener('click', () => {
@@ -167,3 +173,49 @@ function addClassByAriaLabel(ariaLabel, className) {
 
 // Usage example
 addClassByAriaLabel('action-Action-Sign in', 'font-family-golos');
+
+function deleteElementHelpIcon(dataTestId) {
+  const intervalId = setInterval(() => {
+    // Select the element with the specific data-test-id attribute
+    const element = document.querySelector('[data-testid="' + dataTestId + '"]');
+
+    const divToDelete = document.getElementsByClassName('css-junazh');
+
+    if (divToDelete.length > 0) {
+      // Remove the first element from the DOM
+      divToDelete[0].remove();
+    } else {
+      console.log('No elements found with class name');
+    }
+
+    // Check if the element exists
+    if (element !== null) {
+      // Remove the element from the DOM
+      console.log('masuk element ', element);
+      element.parentNode.removeChild(element);
+
+      // Clear the interval to stop checking
+      clearInterval(intervalId);
+    }
+  }, 100); // Check every 100 milliseconds
+}
+
+deleteElementHelpIcon('help-button');
+
+function deleteDivDivider(className) {
+  const intervalId = setInterval(() => {
+    // Select the div with the specific class name
+    const divToDelete = document.querySelector('.' + className);
+
+    // Check if the div exists
+    if (divToDelete !== null) {
+      // Remove the div from the DOM
+      divToDelete.remove();
+
+      // Clear the interval to stop checking
+      clearInterval(intervalId);
+    }
+  }, 100); // Check every 100 milliseconds
+}
+
+deleteDivDivider('ant-divider');
