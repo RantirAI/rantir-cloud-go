@@ -19,7 +19,8 @@ Contact Us:
 hello@Rantir.com
 
 Enter the world of AI dashbaords. With Build mode, logic mode, AI Explore Mode and Data mode we have created the stepping stones of building any internal and external application for most use-cases you can imagine. Free to try for personal uses, build your next AI dashboard in less than 30 seconds. 
-https://uploads-ssl.webflow.com/65df56d73fe878c5e5fdcf2d/663d67fafbf0a220d13c059b_Builder%20Mode.png
+![alt text]([https://github.com/](https://uploads-ssl.webflow.com/65df56d73fe878c5e5fdcf2d/663d67fafbf0a220d13c059b_Builder%20Mode.png)
+
 https://www.youtube.com/watch?v=ZJHsVpobW1U?si=d771rrFSE0-uEfgk
 
 ## Distinctive features
