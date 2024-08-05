@@ -1,27 +1,26 @@
 English 
-
+![Builder Mode - Settings Element](https://uploads-ssl.webflow.com/65df56d73fe878c5e5fdcf2d/663d67fba657b989f00cd188_Builder%20Mode%20-%20Settings%20Element.png)
 
 ## What is Rantir Cloud
 
-Rantir Cloud is a scalability-first, open-source no-code development platform.   
+Rantir Cloud is a scalability-first, open-source no-code development platform.  
 Instead of investing years of time and millions of dollars in research and development, deploy Rantir Cloud in a few minutes and you'll have a private, controllable, and extremely scalable no-code development platform!
 
 Homepage:  
-https://www.Rantir.com/  
+[https://www.Rantir.com/](https://www.Rantir.com/)
 
 Online Demo:  
-https://demo.rantir.app/signin?redirect=/admin
+[https://demo.rantir.app/signin?redirect=/admin](https://demo.rantir.app/signin?redirect=/admin)
 
 Documents:  
-https://rantir.com/documentation
+[https://rantir.com/documentation](https://rantir.com/documentation)
 
 Contact Us:  
 hello@Rantir.com
 
-Enter the world of AI dashbaords. With Build mode, logic mode, AI Explore Mode and Data mode we have created the stepping stones of building any internal and external application for most use-cases you can imagine. Free to try for personal uses, build your next AI dashboard in less than 30 seconds. 
+Enter the world of AI dashboards. With Build mode, Logic mode, AI Explore Mode, and Data mode, we have created the stepping stones for building any internal and external application for most use-cases you can imagine. Free to try for personal use, build your next AI dashboard in less than 30 seconds.
 
-
-https://www.youtube.com/watch?v=ZJHsVpobW1U?si=d771rrFSE0-uEfgk
+[Watch our introduction video](https://www.youtube.com/watch?v=ZJHsVpobW1U?si=d771rrFSE0-uEfgk)
 
 ## Commerical Applications
 
