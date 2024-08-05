@@ -23,6 +23,10 @@ Enter the world of AI dashbaords. With Build mode, logic mode, AI Explore Mode a
 
 https://www.youtube.com/watch?v=ZJHsVpobW1U?si=d771rrFSE0-uEfgk
 
+## Commerical Applications
+
+This is software is not intended for commerical use or resell, or to copy or modify inside any saas or commerical application. We have a script that will break the application if we see sometype of billing module or stripe key teathered to any type of authentication. Please beware, that this opensource version is intended for personal or educational uses. Please purchase a commerical license for any type of business or non-business (sales, modifications, user onboarding, ect.) intents at  https://rantir.com/pricing or schedule a call here: https://calendly.com/rantir/30min
+
 ## Distinctive features
 
 ### 1. Data model-driven
