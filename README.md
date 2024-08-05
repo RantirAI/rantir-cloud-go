@@ -10,13 +10,16 @@ Homepage:
 https://www.Rantir.com/  
 
 Online Demo:  
-https://demo.Rantir.com/
+https://demo.rantir.app/signin?redirect=/admin
 
 Documents:  
 https://rantir.com/documentation
 
 Contact Us:  
 hello@Rantir.com
+
+Enter the world of AI dashbaords. With Build mode, logic mode, AI Explore Mode and Data mode we have created the stepping stones of building any internal and external application for most use-cases you can imagine. Free to try for personal uses, build your next AI dashboard in less than 30 seconds. 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZJHsVpobW1U?si=d771rrFSE0-uEfgk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Distinctive features
 
