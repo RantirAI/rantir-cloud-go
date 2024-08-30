@@ -1,0 +1,134 @@
+name: manual-release
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  workflow_dispatch:
+
+jobs:
+  push-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          repository: nocobase/nocobase
+          ssh-key: ${{ secrets.NOCOBASE_DEPLOY_KEY }}
+          persist-credentials: true
+          fetch-depth: 0
+      - name: Checkout pro-plugins
+        uses: actions/checkout@v4
+        with:
+          repository: nocobase/pro-plugins
+          path: packages/pro-plugins
+          fetch-depth: 0
+          ssh-key: ${{ secrets.PRO_PLUGINS_DEPLOY_KEY }}
+          persist-credentials: true
+      - name: main -> next(nocobase)
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions Bot"
+          git checkout main
+          git pull origin main
+          git checkout next
+          git merge main
+          git push origin next
+      - name: main -> next(pro-plugins)
+        run: |
+          cd ./packages/pro-plugins
+          git checkout main
+          git pull origin main
+          git checkout next
+          git merge main
+          git push origin next
+      - name: push pro plugins(next)
+        continue-on-error: true
+        uses: ad-m/github-push-action@master
+        with:
+          ssh: true
+          branch: next
+          directory: packages/pro-plugins
+          repository: nocobase/pro-plugins
+          tags: true
+          atomic: true
+      - name: push nocobase(next)
+        uses: ad-m/github-push-action@master
+        with:
+          branch: next
+          ssh: true
+          repository: nocobase/nocobase
+          tags: true
+          atomic: true
+      - name: Set Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install Lerna
+        run: npm install -g lerna@4 auto-changelog@2
+      - name: Run release.sh
+        run: |
+          cd ./packages/pro-plugins
+          git checkout main
+          cd ./../..
+          git checkout main
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions Bot"
+          echo "packages/pro-plugins/" >> .git/info/exclude
+          bash release.sh $IS_FEAT
+        env:
+          IS_FEAT: false
+      - name: push pro plugins
+        continue-on-error: true
+        uses: ad-m/github-push-action@master
+        with:
+          ssh: true
+          branch: main
+          directory: packages/pro-plugins
+          repository: nocobase/pro-plugins
+          tags: true
+          atomic: true
+      - name: push nocobase
+        uses: ad-m/github-push-action@master
+        with:
+          branch: main
+          ssh: true
+          repository: nocobase/nocobase
+          tags: true
+          atomic: true
+      - name: main -> next
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions Bot"
+          git checkout main
+          git pull origin main
+          git checkout next
+          git merge -X ours main --no-edit
+          git push origin next
+      - name: main -> next
+        run: |
+          cd ./packages/pro-plugins
+          git checkout main
+          git pull origin main
+          git checkout next
+          git merge -X ours main --no-edit
+          git push origin next
+      - name: push pro plugins
+        continue-on-error: true
+        uses: ad-m/github-push-action@master
+        with:
+          ssh: true
+          branch: next
+          directory: packages/pro-plugins
+          repository: nocobase/pro-plugins
+          tags: true
+          atomic: true
+      - name: push nocobase
+        uses: ad-m/github-push-action@master
+        with:
+          branch: next
+          ssh: true
+          repository: nocobase/nocobase
+          tags: true
+          atomic: true
