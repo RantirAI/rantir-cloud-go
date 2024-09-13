@@ -3,20 +3,22 @@ import { infoSettings } from '../settings';
 import { InfoProps } from '../components';
 import { BlockName, BlockNameLowercase } from '../constants';
 
-export function useInfoProps(): InfoProps {
+export function useExploreProps(): InfoProps {
   const collection = useCollection();
   const { data, loading } = useDataBlockRequest<any[]>();
+  const fields = collection.getFields().filter((field) => !field.uiSchema.title.includes('{{'));
   const token = useAPIClient().auth.getToken();
 
   return {
     token,
     collectionName: collection.name,
+    collectionFields: fields,
     data: data?.data,
     loading: loading,
   };
 }
 
-export function getInfoSchema({ dataSource = 'main', collection }) {
+export function getExploreSchema({ dataSource = 'main', collection }) {
   return {
     type: 'void',
     'x-decorator': 'DataBlockProvider',
@@ -33,7 +35,7 @@ export function getInfoSchema({ dataSource = 'main', collection }) {
       [BlockNameLowercase]: {
         type: 'void',
         'x-component': BlockName,
-        'x-use-component-props': 'useInfoProps',
+        'x-use-component-props': 'useExploreProps',
       },
     },
   };

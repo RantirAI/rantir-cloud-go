@@ -1,7 +1,7 @@
 const endpoint = 'https://api.rantir.com/';
 // const endpoint = 'http://127.0.0.1:5000';
 
-export const getAIAnswer = async (question: string, topics: string[], collection: string, token: string) => {
+export const getAIAnswer = async (question: string, dbColumns: any[], collection: string, token: string) => {
   const info = await getSearchPrediction(question, collection);
   const resp = await fetch('/api/ai:ask', {
     method: 'POST',
@@ -12,7 +12,7 @@ export const getAIAnswer = async (question: string, topics: string[], collection
     body: JSON.stringify({
       question,
       info,
-      topics,
+      dbColumns,
       collection,
       nextQDataSource: info,
     }),
@@ -22,7 +22,7 @@ export const getAIAnswer = async (question: string, topics: string[], collection
   return data;
 };
 
-export const getAIQuestions = async (topics: string[], numQuestions: number, info: any, token: string) => {
+export const getAIQuestions = async (dbColumns: any[], numQuestions: number, info: any, token: string) => {
   const resp = await fetch('/api/ai:info', {
     method: 'POST',
     headers: {
@@ -31,7 +31,7 @@ export const getAIQuestions = async (topics: string[], numQuestions: number, inf
     },
     body: JSON.stringify({
       info,
-      topics,
+      dbColumns,
       numQuestions,
     }),
   });
